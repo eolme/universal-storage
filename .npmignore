@@ -1,0 +1,17 @@
+.vscode
+.idea
+.DS_Store
+.env
+.eslintrc
+.eslintignore
+.editorconfig
+.browserslistrc
+.stylelintrc
+.gitignore
+node_modules
+*.log
+*.lock
+package-lock.json
+jsconfig.json
+tsconfig.json
+

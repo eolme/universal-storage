@@ -1,0 +1,45 @@
+{
+  "name": "@eolme/universal-storage",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "storage",
+    "localstorage",
+    "cookie"
+  ],
+  "homepage": "https://github.com/eolme/universal-storage/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/eolme/universal-storage/issues",
+    "email": "im@petrov.engineer"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Anton Petrov",
+    "email": "im@petrov.engineer",
+    "url": "https://petrov.engineer/"
+  },
+  "source": "src/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "esnext:main": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "umd:main": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle build --inline=all --external=none --compress"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "microbundle": "^0.12.0-next.8"
+  },
+  "dependencies": {
+    "cookie": "^0.4.0",
+    "fast-stringify": "^2.0.0",
+    "json-date-parser": "^1.0.1",
+    "lodash-es": "^4.17.15",
+    "secure-json-parse": "^2.1.0"
+  }
+}
