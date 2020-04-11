@@ -103,7 +103,7 @@ export default class Storage {
   }
 
   removeState(key) {
-    this.setState(key, undefined);
+    this.setState(key, null);
   }
 
   // ------------------------------------
@@ -185,13 +185,13 @@ export default class Storage {
 
     const cookies = this.getCookies();
 
-    const value = cookies[_key] ? decodeURIComponent(cookies[_key]) : undefined;
+    const value = cookies[_key] ? decodeURIComponent(cookies[_key]) : null;
 
     return decodeValue(value);
   }
 
   removeCookie(key, options) {
-    this.setCookie(key, undefined, Object.assign({ maxAge: -1 }, options));
+    this.setCookie(key, null, Object.assign({ maxAge: -1 }, options));
   }
 }
 
