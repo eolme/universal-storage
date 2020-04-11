@@ -171,9 +171,14 @@ export default class Storage {
     const _options = Object.assign({}, this.options.cookie.options, options);
     const _value = encodeValue(value);
 
-    const serializedCookie = serializeCookie(_key, _value, _options);
-
-    document.cookie = serializedCookie;
+    try {
+      const serializedCookie = serializeCookie(_key, _value, _options);
+      document.cookie = serializedCookie;
+    } catch (e) {
+      if (!this.options.ignoreExceptions) {
+        throw e;
+      }
+    }
 
     return value;
   }
