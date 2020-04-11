@@ -88,9 +88,11 @@ export default class Storage {
   _initState(initData) {
     this._state = {};
 
-    // Synchronise initial values
-    for (let key in initData) {
-      this.syncUniversal(key, initData[key]);
+    if (initData) {
+      // Synchronise initial values
+      for (let key in initData) {
+        this.syncUniversal(key, initData[key]);
+      }
     }
   }
 
