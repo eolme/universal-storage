@@ -82,7 +82,7 @@ export default class Storage {
   }
 
   // ------------------------------------
-  // Local state (reactive)
+  // Local state
   // ------------------------------------
 
   _initState(initData) {
