@@ -11,7 +11,7 @@ import date from 'json-date-parser';
 
 export default class Storage {
   constructor(options = {}) {
-    this.options = defaultsDeep({}, options, {
+    this.options = defaultsDeep({
       cookie: {
         prefix: '',
         options: {
@@ -22,7 +22,7 @@ export default class Storage {
         prefix: ''
       },
       ignoreExceptions: false
-    });
+    }, options);
 
     this._initState(options.initialState);
   }
