@@ -2,6 +2,7 @@ import { parse as parseCookie, serialize as serializeCookie } from 'cookie';
 import isNil from 'lodash-es/isNil';
 import isArrayLikeObject from 'lodash-es/isArrayLikeObject';
 import isPlainObject from 'lodash-es/isPlainObject';
+import defaultsDeep from 'lodash-es/defaultsDeep';
 import stringify from 'fast-stringify';
 import secure from 'secure-json-parse';
 import date from 'json-date-parser';
@@ -10,7 +11,18 @@ import date from 'json-date-parser';
 
 export default class Storage {
   constructor(options = {}) {
-    this.options = options;
+    this.options = defaultsDeep({}, options, {
+      cookie: {
+        prefix: '',
+        options: {
+          path: '/'
+        }
+      },
+      localStorage: {
+        prefix: ''
+      },
+      ignoreExceptions: false
+    });
 
     this._initState(options.initialState);
   }
